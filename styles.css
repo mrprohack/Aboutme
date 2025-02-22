@@ -1,0 +1,616 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', Arial, sans-serif;
+    background-color: #2c001e;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Panel styles */
+.panel {
+    background-color: #2c001e;
+    color: #ffffff;
+    height: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.start-menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.2s;
+}
+
+.start-menu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Desktop styles */
+.desktop {
+    height: calc(100vh - 28px);
+    margin-top: 28px;
+    position: relative;
+    padding: 20px;
+}
+
+.desktop-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 80px);
+    gap: 20px;
+    padding: 20px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icon i {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.icon span {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+/* Window styles */
+.window {
+    background-color: #2c001e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    min-width: 400px;
+    min-height: 300px;
+    transition: box-shadow 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
+}
+
+.window.dragging {
+    transition: none;
+    cursor: move;
+    opacity: 0.9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.window-header {
+    background-color: #2c001e;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+}
+
+.window-header:active {
+    cursor: grabbing;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.window-controls span {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.close {
+    background-color: #ff5f57;
+}
+
+.minimize {
+    background-color: #ffbd2e;
+}
+
+.maximize {
+    background-color: #28c940;
+}
+
+/* Terminal styles */
+.terminal-window {
+    background-color: #300a24;
+    border-color: #666;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.terminal-window .window-header {
+    background-color: #3c3c3c;
+}
+
+.terminal-content {
+    background-color: #300a24;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.terminal-output {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #50fa7b;
+    margin-right: 8px;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    flex-grow: 1;
+    outline: none;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* About window styles */
+.about-window {
+    top: 100px;
+    left: 100px;
+    background-color: #2c001e;
+}
+
+.window-content {
+    padding: 20px;
+}
+
+.window-content h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.window-content p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.window-content ul {
+    list-style-position: inside;
+    margin-left: 20px;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a;
+    color: #ffffff;
+}
+
+/* File Manager styles */
+.file-manager-window {
+    display: none;
+    width: 600px;
+    height: 400px;
+}
+
+.file-manager-toolbar {
+    background-color: #3c3c3c;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.nav-button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.path-bar {
+    flex-grow: 1;
+    background-color: #2c001e;
+    border: 1px solid #444;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.file-manager-content {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    overflow-y: auto;
+    height: calc(100% - 90px);
+}
+
+.folder-item,
+.file-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.folder-item:hover,
+.file-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.folder-item i,
+.file-item i {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.folder-item i {
+    color: #ffd700;
+}
+
+.file-item i {
+    color: #ffffff;
+}
+
+.folder-item span,
+.file-item span {
+    font-size: 12px;
+    color: #ffffff;
+    word-break: break-word;
+}
+
+/* Start Menu styles */
+.start-menu-dropdown {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 28px;
+    background-color: #2c001e;
+    border: 1px solid #444;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.start-menu-dropdown.show {
+    display: block;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Show active windows */
+.window.active {
+    display: block;
+    z-index: 100;
+}
+
+/* Resize handles */
+.resize-handle {
+    position: absolute;
+    background: transparent;
+    z-index: 1000;
+}
+
+.window.resizing {
+    transition: none !important;
+    user-select: none;
+}
+
+.window.resizing .resize-handle {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.resize-n {
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    cursor: n-resize;
+}
+
+.resize-e {
+    top: 0;
+    right: -5px;
+    bottom: 0;
+    width: 10px;
+    cursor: e-resize;
+}
+
+.resize-s {
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    cursor: s-resize;
+}
+
+.resize-w {
+    top: 0;
+    left: -5px;
+    bottom: 0;
+    width: 10px;
+    cursor: w-resize;
+}
+
+.resize-ne {
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    cursor: ne-resize;
+}
+
+.resize-se {
+    bottom: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    cursor: se-resize;
+}
+
+.resize-sw {
+    bottom: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    cursor: sw-resize;
+}
+
+.resize-nw {
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    cursor: nw-resize;
+}
+
+/* Make resize handles more visible on hover */
+.window:hover .resize-handle {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.window .resize-handle:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Snap preview */
+.snap-preview {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+    transition: all 0.2s ease;
+}
+
+/* Window menu */
+.window-menu {
+    position: absolute;
+    background: #2c001e;
+    border: 1px solid #444;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1100;
+    min-width: 150px;
+}
+
+.window-menu .menu-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.window-menu .menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Window animations */
+.window {
+    transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.window.maximized {
+    transition: all 0.3s ease;
+}
+
+/* Window focus effect */
+.window.active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    border-color: #666;
+}
+
+.window:not(.active) {
+    opacity: 0.95;
+}
+
+/* Phone Window styles */
+.phone-window {
+    display: none;
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    background-color: #3c3c3c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.app-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-icon i {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.app-icon span {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* About Me Window styles */
+.about-me-window {
+    display: none;
+    width: 400px;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.about-me-window .window-content {
+    padding: 20px;
+}
+
+.about-me-window h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.about-me-window h3 {
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.about-me-window p,
+.about-me-window li {
+    color: #ffffff;
+}
+
+.about-me-window ul {
+    list-style-type: disc;
+    margin-left: 20px;
+} 

@@ -1,243 +1,300 @@
 <!DOCTYPE html>
-<html>
-<title>banu mobiles</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.w3-sidebar a {font-family: "Roboto", sans-serif}
-body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-</style>
-<body class="w3-content" style="max-width:1200px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <h3 class="w3-wide"><b>banu mobiles</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-    <a href="#" class="w3-bar-item w3-button">Shirts</a>
-    <a href="#" class="w3-bar-item w3-button">Dresses</a>
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
-      Jeans <i class="fa fa-caret-down"></i>
-    </a>
-    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>mobile accessories</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
-    </div>
-    <a href="#" class="w3-bar-item w3-button">Jackets</a>
-    <a href="#" class="w3-bar-item w3-button">Gymwear</a>
-    <a href="#" class="w3-bar-item w3-button">Blazers</a>
-    <a href="#" class="w3-bar-item w3-button">Shoes</a>
-  </div>
-  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
-  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24 w3-wide">banu mobiles</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
-
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
-  
-  <!-- Top header -->
-  <header class="w3-container w3-xlarge">
-    <p class="w3-left">banu mobiles</p>
-    <p class="w3-right">
-      <i class="fa fa-shopping-cart w3-margin-right"></i>
-      <i class="fa fa-search"></i>
-    </p>
-  </header>
-
-  <!-- Image header -->
-  <div class="w3-display-container w3-container">
-    <img src="image/back.jpg" alt="Jeans" style="width:100%">
-    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">mobile accessories</h1>
-      <h1 class="w3-hide-large w3-hide-medium">mobile accessories</h1>
-      <h1 class="w3-hide-small">mrpro</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
-    </div>
-  </div>
-
-  <div class="w3-container w3-text-grey" id="jeans">
-    <p>8 items</p>
-  </div>
-
-  <!-- Product grid -->
-  <div class="w3-row w3-grayscale">
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="image/case1.jpg" style="width:100%">
-        <p>mobile haed case<br><b>₹ 119</b></p>
-      </div>
-      <div class="w3-container">
-        <img src="image/head.jpg" style="width:100%">
-        <p>head phones <br><b>₹ 79</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="image/photo.jpg" style="width:100%">
-          <span class="w3-tag w3-display-topleft">New</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-          </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Linux Desktop</title>
+</head>
+<body>
+    <!-- Top Panel -->
+    <div class="panel">
+        <div class="start-menu">
+            <i class="fas fa-terminal"></i> Activities
         </div>
-        <p>photo cases<br><b>₹ 119 </b></p>
-      </div>
-      <div class="w3-container">
-        <img src="image/temp.jpeg" style="width:100%">
-        <p>full temper glass<br><b>₹ 89</b></p>
-      </div>
-    </div>
-
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="image/wihead.png" style="width:100%">
-        <p>wireless headphones<br><b>₹ 320</b></p>
-      </div>
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="image/case.jpg" style="width:100%">
-          <span class="w3-tag w3-display-topleft">Sale</span>
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
-          </div>
+        <div class="system-tray">
+            <span id="clock">00:00</span>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-volume-up"></i>
+            <i class="fas fa-battery-full"></i>
         </div>
-        <p>normal mobile cases<br><b class="w3-text-red">₹ 89</b></p>
-      </div>
     </div>
 
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <img src="image/Airpod.jpg" style="width:100%">
-        <p>Airepods <br><b>₹ 949</b></p>
-      </div>
-      <div class="w3-container">
-        <img src="image/jbl.jpg" style="width:100%">
-        <p>spekers<br><b>₹ 349</b></p>
-      </div>
+    <!-- Desktop Area -->
+    <div class="desktop">
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="icon" data-window="home-folder">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </div>
+            <div class="icon" data-window="documents-folder">
+                <i class="fas fa-folder"></i>
+                <span>Documents</span>
+            </div>
+            <div class="icon" data-window="terminal">
+                <i class="fas fa-terminal"></i>
+                <span>Terminal</span>
+            </div>
+            <div class="icon" data-window="hacker-typer">
+                <i class="fas fa-keyboard"></i>
+                <span>Hacker Typer</span>
+            </div>
+            <div class="icon" data-window="password-cracker">
+                <i class="fas fa-lock"></i>
+                <span>Password Cracker</span>
+            </div>
+            <div class="icon" data-window="bitcoin-miner">
+                <i class="fas fa-btc"></i>
+                <span>Bitcoin Miner</span>
+            </div>
+            <div class="icon" data-window="surveillance">
+                <i class="fas fa-eye"></i>
+                <span>Surveillance</span>
+            </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="window terminal-window" id="terminal">
+            <div class="window-header">
+                <span class="title">Terminal</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="terminal-content">
+                <div class="terminal-output" id="terminal-output">
+                    Welcome to Linux Terminal<br>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">[user@localhost ~]$</span>
+                    <input type="text" id="terminal-input" autofocus>
+                </div>
+            </div>
+        </div>
+
+        <!-- File Manager Window -->
+        <div class="window file-manager-window" id="home-folder">
+            <div class="window-header">
+                <span class="title">Home Folder</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="file-manager-toolbar">
+                <button class="nav-button"><i class="fas fa-arrow-left"></i></button>
+                <button class="nav-button"><i class="fas fa-arrow-right"></i></button>
+                <button class="nav-button"><i class="fas fa-arrow-up"></i></button>
+                <input type="text" class="path-bar" value="/home/user" readonly>
+            </div>
+            <div class="file-manager-content">
+                <div class="folder-item" data-path="/home/user/Documents">
+                    <i class="fas fa-folder"></i>
+                    <span>Documents</span>
+                </div>
+                <div class="folder-item" data-path="/home/user/Downloads">
+                    <i class="fas fa-folder"></i>
+                    <span>Downloads</span>
+                </div>
+                <div class="folder-item" data-path="/home/user/Pictures">
+                    <i class="fas fa-folder"></i>
+                    <span>Pictures</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file-text"></i>
+                    <span>readme.txt</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documents Folder Window -->
+        <div class="window file-manager-window" id="documents-folder">
+            <div class="window-header">
+                <span class="title">Documents</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="file-manager-toolbar">
+                <button class="nav-button"><i class="fas fa-arrow-left"></i></button>
+                <button class="nav-button"><i class="fas fa-arrow-right"></i></button>
+                <button class="nav-button"><i class="fas fa-arrow-up"></i></button>
+                <input type="text" class="path-bar" value="/home/user/Documents" readonly>
+            </div>
+            <div class="file-manager-content">
+                <div class="file-item">
+                    <i class="fas fa-file-word"></i>
+                    <span>Report.doc</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file-excel"></i>
+                    <span>Budget.xlsx</span>
+                </div>
+                <div class="file-item">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Manual.pdf</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phone Window -->
+        <div class="window phone-window" id="phone">
+            <div class="window-header">
+                <span class="title">Phone</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="phone-content">
+                <h2>Phone Interface</h2>
+                <p>This is a simulated phone window.</p>
+                <div class="app-icons">
+                    <div class="app-icon">
+                        <i class="fas fa-phone"></i>
+                        <span>Call</span>
+                    </div>
+                    <div class="app-icon">
+                        <i class="fas fa-comment"></i>
+                        <span>Messages</span>
+                    </div>
+                    <div class="app-icon">
+                        <i class="fas fa-camera"></i>
+                        <span>Camera</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Me Window -->
+        <div class="window about-me-window" id="about-me">
+            <div class="window-header">
+                <span class="title">About Me</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <h2>Welcome to My Profile</h2>
+                <p>Hi! I'm [Your Name], a passionate web developer.</p>
+                <h3>Skills</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React, Node.js</li>
+                    <li>Python, Django</li>
+                </ul>
+                <h3>Contact</h3>
+                <p>Email: [your.email@example.com]</p>
+                <p>LinkedIn: [Your LinkedIn Profile]</p>
+            </div>
+        </div>
+
+        <!-- Hacker Typer Window -->
+        <div class="window hacker-typer-window" id="hacker-typer">
+            <div class="window-header">
+                <span class="title">Hacker Typer</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>Start typing to simulate hacking!</p>
+                <textarea id="hacker-typer-input" rows="10" style="width: 100%;"></textarea>
+            </div>
+        </div>
+
+        <!-- Password Cracker Window -->
+        <div class="window password-cracker-window" id="password-cracker">
+            <div class="window-header">
+                <span class="title">Password Cracker</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>Enter target IP:</p>
+                <input type="text" id="target-ip" placeholder="Enter IP address" style="width: 100%;">
+                <button id="start-crack">Start Cracking</button>
+            </div>
+        </div>
+
+        <!-- Bitcoin Miner Window -->
+        <div class="window bitcoin-miner-window" id="bitcoin-miner">
+            <div class="window-header">
+                <span class="title">Bitcoin Miner</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>Mining Bitcoin...</p>
+                <div id="mining-status">Status: Idle</div>
+            </div>
+        </div>
+
+        <!-- Surveillance Window -->
+        <div class="window surveillance-window" id="surveillance">
+            <div class="window-header">
+                <span class="title">Surveillance</span>
+                <div class="window-controls">
+                    <span class="minimize">−</span>
+                    <span class="maximize">□</span>
+                    <span class="close">×</span>
+                </div>
+            </div>
+            <div class="window-content">
+                <p>Surveillance feed...</p>
+                <img src="surveillance-feed.jpg" alt="Surveillance Feed" style="width: 100%;">
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Subscribe section -->
-  <div class="w3-container w3-black w3-padding-32">
-    <h1>Subscribe</h1>
-    <p>To get special offers and VIP treatment:</p>
-    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
-    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
-    <div class="w3-row-padding">
-      <div class="w3-col s4">
-        <h4>Contact</h4>
-        <p>Questions? Go ahead.</p>
-        <form action="/action_page.php" target="_blank">
-          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
-          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
-          <button type="submit" class="w3-button w3-block w3-black">Send</button>
-        </form>
-      </div>
-
-      <div class="w3-col s4">
-        <h4>About</h4>
-        <p><a href="#">About us</a></p>
-        <p><a href="#">We're hiring</a></p>
-        <p><a href="#">Support</a></p>
-        <p><a href="#">Find store</a></p>
-        <p><a href="#">Shipment</a></p>
-        <p><a href="#">Payment</a></p>
-        <p><a href="#">Gift card</a></p>
-        <p><a href="#">Return</a></p>
-        <p><a href="#">Help</a></p>
-      </div>
-
-      <div class="w3-col s4 w3-justify">
-        <h4>Store</h4>
-        <p><i class="fa fa-fw fa-map-marker"></i> banu mobiles</p>
-        <p><i class="fa fa-fw fa-phone"></i> +917338816290</p>
-        <p><i class="fa fa-fw fa-envelope"></i> banumobileservicechennai@mail.com</p>
-        <h4>We accept</h4>
-        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
-        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-        <br>
-        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
-        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
-        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
-      </div>
+    <!-- Start Menu -->
+    <div class="start-menu-dropdown" id="start-menu">
+        <div class="menu-item" data-window="home-folder">
+            <i class="fas fa-folder"></i> File Manager
+        </div>
+        <div class="menu-item" data-window="terminal">
+            <i class="fas fa-terminal"></i> Terminal
+        </div>
+        <div class="menu-item">
+            <i class="fas fa-cog"></i> Settings
+        </div>
+        <div class="menu-item">
+            <i class="fas fa-power-off"></i> Log Out
+        </div>
     </div>
-  </footer>
 
-  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.instagram.com/banu_mobiles/" title="mrpro" target="_blank" class="w3-hover-opacity">mrpro</a></div>
+    <script src="script.js"></script>
+    <script>
+        const startMenu = document.getElementById('start-menu');
+        const startMenuButton = document.querySelector('.start-menu');
 
-  <!-- End page content -->
-</div>
+        startMenuButton.addEventListener('click', () => {
+            startMenu.classList.toggle('show');
+        });
 
-<!-- Newsletter Modal -->
-<div id="newsletter" class="w3-modal">
-  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
-    <div class="w3-container w3-white w3-center">
-      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
-      <h2 class="w3-wide">NEWSLETTER</h2>
-      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
-    </div>
-  </div>
-</div>
-
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
-
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
+        document.addEventListener('click', (e) => {
+            if (!startMenu.contains(e.target) && !startMenuButton.contains(e.target)) {
+                startMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 
