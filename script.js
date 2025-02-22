@@ -483,6 +483,15 @@ const terminalOutput = document.getElementById('terminal-output');
 let commandHistory = [];
 let historyIndex = -1;
 
+// Function to ensure terminal is scrolled to the latest content
+function scrollToBottom() {
+    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    terminalInput.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Add smooth scrolling to terminal output
+terminalOutput.style.scrollBehavior = 'smooth';
+
 terminalInput.addEventListener('keydown', function(e) {
     if (e.key === 'Enter') {
         const command = this.value.trim();
@@ -491,6 +500,8 @@ terminalInput.addEventListener('keydown', function(e) {
             commandHistory.push(command);
             historyIndex = commandHistory.length;
             this.value = '';
+            // Scroll to bottom after command execution
+            setTimeout(scrollToBottom, 0);
         }
     } else if (e.key === 'ArrowUp') {
         e.preventDefault();
@@ -510,10 +521,13 @@ terminalInput.addEventListener('keydown', function(e) {
     }
 });
 
+// Add input focus handling
+terminalInput.addEventListener('focus', scrollToBottom);
+
 function executeCommand(command) {
     const output = document.createElement('div');
     // Clear previous prompt before adding new command
-    terminalOutput.innerHTML += `<span class="prompt">[user@localhost ~]$</span> ${command}<br>`;
+    terminalOutput.innerHTML += `<span class="prompt">[mrprohack@localhost ~]$</span> ${command}<br>`;
     
     switch(command.toLowerCase()) {
         case 'help':
@@ -525,6 +539,8 @@ function executeCommand(command) {
                 - ls: List directory contents<br>
                 - whoami: Show current user<br>
                 - open [file/folder]: Open file manager<br>
+                - about me: Show user information<br>
+                - job: Show job information<br>
             `;
             break;
         case 'clear':
@@ -542,7 +558,13 @@ function executeCommand(command) {
             `;
             break;
         case 'whoami':
-            output.innerHTML += 'user<br>';
+            output.innerHTML += 'mrprohack<br>';
+            break;
+        case 'about me':
+            output.innerHTML += 'Name: mrprohack<br>Age: 25<br>';
+            break;
+        case 'job':
+            output.innerHTML += 'Job: AI Developer<br>Work: Freelancer<br>';
             break;
         case 'open documents':
         case 'open documents/':
@@ -563,7 +585,8 @@ function executeCommand(command) {
     }
     
     terminalOutput.appendChild(output);
-    terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    // Use the new scrollToBottom function
+    setTimeout(scrollToBottom, 0);
 }
 
 // Phone window functionality

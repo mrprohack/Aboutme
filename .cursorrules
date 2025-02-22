@@ -106,7 +106,7 @@ If needed, you can further use the `web_scraper.py` file to scrape the web page 
 
 [X] Define the Website Structure
 [X] Set Up the Project Environment
-[X] Develop the HTML Structure
+[ ] Develop the HTML Structure
 [ ] Style the Website with CSS
 [ ] Add Interactivity with JavaScript
 [ ] Testing and Debugging
