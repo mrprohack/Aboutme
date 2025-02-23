@@ -558,13 +558,31 @@ function executeCommand(command) {
             `;
             break;
         case 'whoami':
-            output.innerHTML += 'mrprohack<br>';
+            output.innerHTML += 'Manikandan<br>';
             break;
         case 'about me':
-            output.innerHTML += 'Name: mrprohack<br>Age: 25<br>';
+            output.innerHTML += `
+                Name: Manikandan<br>
+                About: A developer passionate about:<br>
+                <br>
+                🤖 AI & LLMs<br>
+                🖼️ Image Generation<br>
+                💻 Development<br>
+                🔐 Cybersecurity<br>
+                <br>
+                🚀 Exploring AI, building cool projects, and learning every day!<br>
+            `;
             break;
         case 'job':
-            output.innerHTML += 'Job: AI Developer<br>Work: Freelancer<br>';
+            output.innerHTML += `
+                Job: Developer<br>
+                Specializations:<br>
+                - Artificial Intelligence<br>
+                - Large Language Models<br>
+                - Image Generation<br>
+                - Software Development<br>
+                - Cybersecurity<br>
+            `;
             break;
         case 'open documents':
         case 'open documents/':
